@@ -51,7 +51,7 @@ async function saveFigmaDocument() {
     console.log('Before evaluate')
     await page.evaluate(() => {
       console.log('triggerAction')
-      return ImageBindingsObj.imageManager.loadAllImages()
+      return ImageBindingsObj.imageManager.loadAllImagesUnder('0:0')
         .then(() => {
           console.log('Loaded all images, saving file...')
           return FigmaAppObj.triggerAction('save-as')
